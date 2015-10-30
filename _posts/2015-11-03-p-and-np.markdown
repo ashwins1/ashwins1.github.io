@@ -98,6 +98,9 @@ and \\(y\\) concatenated together) in polynomial time.
 </div>
 
 <div class="proof">
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 Intuitively, the content of this lemma is that a language \\(L\\) is in
 \\(NP\\) if and only if, for each string \\(x\\) in the language, there is
 a proof that the string is in the language which can be verified in
