@@ -56,7 +56,7 @@ disjunction (or-ing together) of at most three Boolean variables, decide
 whether there exists an assignment of truth values to each Boolean variable
 such that all the clauses are satisfied. We can construct a corresponding
 language as follows. Take the alphabet
-alphabet \\(\Sigma = \{ 0, 1, ' ', \neg, \wedge \}\\). An instance of Professor
+alphabet \\(\Sigma = \{ 0, 1, \textvisiblespace, \neg, \wedge \}\\). An instance of Professor
 Aaronson's 3-SAT problem can be encoded as a string in this alphabet
 as follows:
     1. Encode the name of each Boolean variable as a distinct binary number.
@@ -74,8 +74,21 @@ clauses; then map each distinct binary number to a distinct Boolean variable
 (negating as necessary) to get each individual clause.
 
 We define the language \\(3SAT\\) to be the set of all strings \\(x\\) of
-symbols from \\(\Sigma\\) such that (1) \\(x\\) is a valid encoding (as defined
-above), and (2) the instance of Aaronson's 3-SAT problem encoded by \\(x\\) is
-satisfiable. Now the decision problem of determining whether a particular
-sequence of clauses is satisfiable is exactly the problem of determining
-whether a particular string is in the language \\(3SAT\\).
+symbols from \\(\Sigma\\) such that:
+    1. \\(x\\) is a valid encoding (as defined above), and
+    2. The instance of Aaronson's 3-SAT problem encoded by \\(x\\) is
+       satisfiable.
+
+Now the decision problem of determining whether a particular sequence of
+clauses is satisfiable (Aaronson's formulation of 3-SAT) is exactly the problem
+of determining whether a particular string is in the language \\(3SAT\\) (our
+formulation).
+
+So we have shown that our definition of complexity classes as sets of languages
+is equivalent to Professor Aaronson's. Now we come to the meat of this post:
+the lemma which lets us define the class \\(NP\\) without recourse to the
+notion of a nondeterministic Turing machine.
+
+<div class="theorem">
+Foobar.
+</div>
