@@ -7,15 +7,17 @@
 
 # Site settings
 title: Your awesome title
-email: your-email@domain.com
+email: ashwin@cs.stanford.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  I am starting a math blog for MaBloWriMo (Math Blog Writing Month),
+  which by happenstance coincides with the better-known NaNoWriMo.
+  To start with, I will be working through Scott Aaronson's
+  *Quantum Computing Since Democritus*. Expect lots of worked problems
+  from the book in the coming days!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+# twitter_username: jekyllrb
+github_username:  ashwins1
 
 # Build settings
 markdown: kramdown
