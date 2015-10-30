@@ -90,7 +90,7 @@ the lemma which lets us define the class \\(NP\\) without recourse to the
 notion of a nondeterministic Turing machine.
 
 <div class="lemma">
-A language \\(L\\) is in complexity class \\(NP\\) if and only if there exists
+A language $L$ is in complexity class $NP$ if and only if there exists
 a deterministic Turing machine \\(A\\) such that, for every string
 \\(x \in L\\), there exists a string \\(y\\) whose length is polynomial
 in the length of \\(x\\) and \\(A\\) accepts \\(x \| y\\) (i.e., \\(x\\)
