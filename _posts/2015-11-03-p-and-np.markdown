@@ -16,6 +16,8 @@ contrast to Professor Aaronson, I will motivate the definitions of these two
 complexity classes by first defining \\(P\\) and \\(NP\\) languages (i.e., sets
 of strings of symbols in some alphabet).
 
+$$a^2 + b^2 = c^2$$
+
 A language \\(L\\) is said to be in complexity class \\(P\\) if and only if there
 exists some Turing machine \\(A\\) which, given as input any string \\(x\\)
 whose length is denoted \\(n\\), can decide whether \\(x \in L\\) after making
