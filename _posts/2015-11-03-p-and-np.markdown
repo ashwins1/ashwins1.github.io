@@ -5,12 +5,6 @@ date:   2015-11-03 20:17:44 -0800
 categories: math quantum
 ---
 
-<head>
-    <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-</head>
-
 This first post will work through some of the exercises in Chapter 6 of
 *Quantum Computing Since Democritus*, entitled "P, NP, and Friends".
 Unfortunately for my readers, I worked through Chapters 1 through 5 before
@@ -91,19 +85,20 @@ notion of a nondeterministic Turing machine.
 
 <div class="lemma">
 A language $L$ is in complexity class $NP$ if and only if there exists
-a deterministic Turing machine \\(A\\) such that, for every string
+a deterministic Turing machine \\(D\\) such that, for every string
 \\(x \in L\\), there exists a string \\(y\\) whose length is polynomial
-in the length of \\(x\\) and \\(A\\) accepts \\(x \| y\\) (i.e., \\(x\\)
+in the length of \\(x\\) and \\(D\\) accepts \\(x \| y\\) (i.e., \\(x\\)
 and \\(y\\) concatenated together) in polynomial time.
 </div>
 
 <div class="proof">
-    <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
 Intuitively, the content of this lemma is that a language \\(L\\) is in
 \\(NP\\) if and only if, for each string \\(x\\) in the language, there is
 a proof that the string is in the language which can be verified in
 deterministic polynomial time. This proof is what is represented by
 the string \\(y\\) in the statement of the lemma above.
+
+First, suppose that $L$ is in $NP$. Then, for any string $\x \in L$,
+we know that there exists some nondeterministic Turing machine $A$
+that accepts $x$ in polynomial time.
 </div>
