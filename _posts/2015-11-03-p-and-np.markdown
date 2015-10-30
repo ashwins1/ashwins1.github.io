@@ -5,6 +5,12 @@ date:   2015-11-03 20:17:44 -0800
 categories: math quantum
 ---
 
+<head>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+
 This first post will work through some of the exercises in Chapter 6 of
 *Quantum Computing Since Democritus*, entitled "P, NP, and Friends".
 Unfortunately for my readers, I worked through Chapters 1 through 5 before
