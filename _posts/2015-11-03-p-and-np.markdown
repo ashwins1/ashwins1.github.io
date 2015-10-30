@@ -20,12 +20,62 @@ This post assumes that the notion of a Turing machine has been defined. We will
 start with the definitions of complexity classes \\(P\\) and \\(NP\\). In
 contrast to Professor Aaronson, I will motivate the definitions of these two
 complexity classes by first defining \\(P\\) and \\(NP\\) languages (i.e., sets
-of strings of symbols in some alphabet).
+of strings of symbols in some alphabet). We will prove a convenient lemma that
+will allow us to talk about the complexity class \\(NP\\) without resorting to
+the notion of a nondeterministic Turing machine.
 
-$$a^2 + b^2 = c^2$$
+For the remainder of this article, let \\(\Sigma\\) denote our alphabet.
+Symbols from \\(\Sigma\\) will be read from and written to the tapes of all the
+Turing machines we discuss from now on. Furthermore, a *language* is defined to
+be some set of strings (finite sequences) of symbols in \\(\Sigma\\).
 
-A language \\(L\\) is said to be in complexity class \\(P\\) if and only if there
-exists some Turing machine \\(A\\) which, given as input any string \\(x\\)
-whose length is denoted \\(n\\), can decide whether \\(x \in L\\) after making
-a number of transitions (moves) that is at most some polynomial function of
-\\(n\\).
+A language \\(L\\) is said to be in complexity class \\(P\\) if and only if
+there exists some deterministic Turing machine \\(A\\) and polynomial function
+\\(g\\) satisfying the following conditions:
+let \\(x\\) be a string of symbols in \\(\Sigma\\), and let \\(n\\) be the length
+of \\(x\\). Then if \\(A\\) is run with \\(x\\) on its input tape, \\(A\\) will
+terminate in an accepting state if \\(x \in L\\) and a failing state otherwise.
+Furthermore, \\(A\\) must terminate after making a number of transitions (moves)
+that is at most \\(g(n)\\).
+
+Similarly, a language \\(L\\) is said to be in complexity class \\(NP\\) if and
+only if there exists some *nondeterministic* Turing machine \\(A\\) and
+polynomial \\(g\\) such that, given as input any string \\(x\\) of length
+\\(n\\), \\(A\\) can decide whether \\(x \in L\\) after making a number of
+transitions (moves) that is at most \\(g(n)\\).
+
+Professor Aaronson likes to talk about *problems* (specifically decision
+problems) being in \\(P\\) or \\(NP\\). How can we reconcile the notion of a
+problem being in a particular complexity class with our above definition of
+complexity classes as sets of languages? Basically, we do so by mapping
+problems to languages.
+
+Let us take a concrete example, such as 3-SAT. The
+problem here is, given a sequence of Boolean clauses, each of which is the
+disjunction (or-ing together) of at most three Boolean variables, decide
+whether there exists an assignment of truth values to each Boolean variable
+such that all the clauses are satisfied. We can construct a corresponding
+language as follows. Take the alphabet
+alphabet \\(\Sigma = \{ 0, 1, ' ', \neg, \wedge \}\\). An instance of Professor
+Aaronson's 3-SAT problem can be encoded as a string in this alphabet
+as follows:
+    1. Encode the name of each Boolean variable as a distinct binary number.
+    2. Encode each clause by mapping each variable in that clause
+       to its binary representation from step 1, prefixed with the \\(\neg\\) symbol if that
+       variable is negated in the clause. The distinct variable representations within
+       a clause are separated by using the space symbol.
+    3. Concatenate all the encoded clauses together, separating them with the
+       \\(\wedge\\) symbol.
+
+It should be intuitively clear how to go from such an encoding back to an
+instance of the original 3-SAT problem as defined by Aaronson: simply split up
+the string of symbols on the \\(\wedge\\) character to get the individual
+clauses; then map each distinct binary number to a distinct Boolean variable
+(negating as necessary) to get each individual clause.
+
+We define the language \\(3SAT\\) to be the set of all strings \\(x\\) of
+symbols from \\(\Sigma\\) such that (1) \\(x\\) is a valid encoding (as defined
+above), and (2) the instance of Aaronson's 3-SAT problem encoded by \\(x\\) is
+satisfiable. Now the decision problem of determining whether a particular
+sequence of clauses is satisfiable is exactly the problem of determining
+whether a particular string is in the language \\(3SAT\\).
