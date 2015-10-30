@@ -98,13 +98,13 @@ a proof that the string is in the language which can be verified in
 deterministic polynomial time. This proof is what is represented by
 the string \\(y\\) in the statement of the lemma above.
 
-First, suppose that \\(L\\) is in \\(NP\\). Then, for any string \\(\x \in L\\),
+First, suppose that \\(L\\) is in \\(NP\\). Then, for any string \\(x \in L\\),
 we know that there exists some nondeterministic Turing machine \\(A\\)
 that accepts \\(x\\) in polynomial time. But we know that a nondeterministic
 Turing machine is one that, at every step, has a choice  of which
 state to transition to. Moreover, we know that since \\(A\\) terminates in
 polynomial time, it makes at most a polynomial number of such choices.
-So we can choose the string \\(y\\) to encode which choice \\(A\\) made
+So we can choose the string \\(y\\) to encode which choices \\(A\\) made
 when deciding \\(x\\). A deterministic Turing machine can then take \\(x\\)
 and \\(y\\) and simulate running \\(A\\) on \\(x\\), while making the decisions
 encoded in \\(y\\) whenever it comes to a "fork in the road", so to speak.
