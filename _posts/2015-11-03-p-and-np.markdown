@@ -56,9 +56,9 @@ disjunction (or-ing together) of at most three Boolean variables, decide
 whether there exists an assignment of truth values to each Boolean variable
 such that all the clauses are satisfied. We can construct a corresponding
 language as follows. Take the alphabet
-alphabet \\(\Sigma = \{ 0, 1, \textvisiblespace, \neg, \wedge \}\\). An instance of Professor
-Aaronson's 3-SAT problem can be encoded as a string in this alphabet
-as follows:
+alphabet \\(\Sigma = \left\{ 0, 1, ␣, \neg, \wedge \right\}\\).
+An instance of Professor Aaronson's 3-SAT problem can be encoded as a string in
+this alphabet as follows:
     1. Encode the name of each Boolean variable as a distinct binary number.
     2. Encode each clause by mapping each variable in that clause
        to its binary representation from step 1, prefixed with the \\(\neg\\) symbol if that
@@ -89,6 +89,18 @@ is equivalent to Professor Aaronson's. Now we come to the meat of this post:
 the lemma which lets us define the class \\(NP\\) without recourse to the
 notion of a nondeterministic Turing machine.
 
-<div class="theorem">
-Foobar.
+<div class="lemma">
+A language \\(L\\) is in complexity class \\(NP\\) if and only if there exists
+a deterministic Turing machine \\(A\\) such that, for every string
+\\(x \in L\\), there exists a string \\(y\\) whose length is polynomial
+in the length of \\(x\\) and \\(A\\) accepts \\(x \| y\\) (i.e., \\(x\\)
+and \\(y\\) concatenated together) in polynomial time.
+</div>
+
+<div class="proof">
+Intuitively, the content of this lemma is that a language \\(L\\) is in
+\\(NP\\) if and only if, for each string \\(x\\) in the language, there is
+a proof that the string is in the language which can be verified in
+deterministic polynomial time. This proof is what is represented by
+the string \\(y\\) in the statement of the lemma above.
 </div>
