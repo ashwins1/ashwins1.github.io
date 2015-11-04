@@ -16,12 +16,15 @@ contrast to Professor Aaronson, I will motivate the definitions of these two
 complexity classes by first defining \\(P\\) and \\(NP\\) languages (i.e., sets
 of strings of symbols in some alphabet). We will prove a convenient lemma that
 will allow us to talk about the complexity class \\(NP\\) without resorting to
-the notion of a nondeterministic Turing machine.
+the notion of a nondeterministic Turing machine. This lemma was shown to me
+in Professor Ryan Williams' computational complexity class, CS154, which I
+took in the winter quarter of 2014 at Stanford University.
 
-For the remainder of this article, let \\(\Sigma\\) denote our alphabet.
+For the remainder of this post, let \\(\Sigma\\) denote our alphabet.
 Symbols from \\(\Sigma\\) will be read from and written to the tapes of all the
 Turing machines we discuss from now on. Furthermore, a *language* is defined to
 be some set of strings (finite sequences) of symbols in \\(\Sigma\\).
+Finally, let \\(|x|\\) denote the length of the string \\(x\\).
 
 A language \\(L\\) is said to be in complexity class \\(P\\) if and only if
 there exists some deterministic Turing machine \\(A\\) and polynomial function
@@ -85,17 +88,17 @@ notion of a nondeterministic Turing machine.
 
 <div class="lemma" markdown="1">
 A language \\(L\\) is in complexity class \\(NP\\) if and only if there exists
-a deterministic Turing machine \\(D\\) such that, for every string
-\\(x \in L\\), there exists a string \\(y\\) whose length is polynomial
-in the length of \\(x\\) and \\(D\\) accepts \\(x \| y\\) (i.e., \\(x\\)
+a deterministic Turing machine \\(D\\) and polynomial \\(q ( \cdot )\\) such
+that, for every string \\(x \in L\\), there exists a string \\(y\\) whose
+length is at most \\(q(|x|)\\) and \\(D\\) accepts \\(x \| y\\) (i.e., \\(x\\)
 and \\(y\\) concatenated together) in polynomial time.
 </div>
 
 <div class="proof" markdown="1">
 Intuitively, the content of this lemma is that a language \\(L\\) is in
-\\(NP\\) if and only if, for each string \\(x\\) in the language, there is
-a proof that the string is in the language which can be verified in
-deterministic polynomial time. This proof is what is represented by
+\\(NP\\) if and only if, for each string \\(x\\) in the language, there is a
+proof (called a *certificate*) that the string is in the language, which can be
+verified in deterministic polynomial time. This proof is what is represented by
 the string \\(y\\) in the statement of the lemma above.
 
 First, suppose that \\(L\\) is in \\(NP\\). Then, for any string \\(x \in L\\),
@@ -111,4 +114,36 @@ encoded in \\(y\\) whenever it comes to a "fork in the road", so to speak.
 This deterministic Turing machine will halt in polynomial time and will
 accept (since by assumption \\(A\\) accepted \\(x\\)). Hence the "only if"
 direction of the lemma is proven.
+
+Now we will show the reverse direction. Suppose that there exists a
+deterministic Turing machine \\(D\\) such that, for all \\(x \in L\\), there
+exists a string \\(y\\) and \\(D\\) accepts \\(x \| y\\) in polynomial time.
+Then we can come up with a nondeterministic Turing machine that decides
+\\(x \in L\\) in (nondeterministic) polynomial time as follows: given as input
+any string \\(x\\), nondeterministically choose every possible value of
+\\(y\\) and then simulate running \\(D\\) on \\(x \| y\\). If any of those
+choices lead to an accepting state, then decide \\(x \in L\\). Otherwise,
+output \\(x \not\in L\\).
+
+Since the length of \\(y\\) is bounded above by a known polynomial \\(q\\) of
+the length of \\(x\\), there are only finitely many possible choices for
+\\(y\\) and hence this construction is certainly finite and hence this
+construction yields a valid nondeterministic Turing machine. Furthermore, since
+each computation path (after choosing a value of \\(y\\)) simply simulates a
+deterministic polynomial time Turing machine (namely \\(D\\)), this constructed
+nondeterministic Turing machine which decides \\(L\\) runs in nondeterministic
+polynomial time.  Hence, by definition, the language \\(L\\) is in \\(NP\\).
 </div>
+
+So we have shown that the \\(NP\\) languages are precisely those languages
+\\(L\\) whose elements have a "proof" that they are in \\(L\\), which proof is
+verifiable in polynomial time by a deterministic Turing machine. Returning to
+the framing of complexity classes in terms of decision problems, what this
+means is that a solvable instance of an \\(NP\\) decision problem has a proof
+of solvability which can be verified "easily". Taking 3-SAT, for example, a
+proof of solvability would be an assignment of truth values to each of the
+Boolean variables. Given a satisfying assignment, one can verify that all the
+clauses are satisfied in polynomial (indeed, linear) time, by simply iterating
+through all the clauses and computing their truth values under the putatively
+satisfying assignment. Other \\(NP\\) problems, such as subset sum, can be
+efficiently verified similarly.
