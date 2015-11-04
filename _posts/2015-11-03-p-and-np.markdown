@@ -132,7 +132,7 @@ output \\(x \not\in L\\).
 
 Since the length of \\(y\\) is bounded above by a known polynomial \\(q\\) of
 the length of \\(x\\), there are only finitely many possible choices for
-\\(y\\) and hence this construction is certainly finite and hence this
+\\(y\\) and hence this construction is certainly finite and
 construction yields a valid nondeterministic Turing machine. Furthermore, since
 each computation path (after choosing a value of \\(y\\)) simply simulates a
 deterministic polynomial time Turing machine (namely \\(D\\)), this constructed
@@ -148,9 +148,10 @@ the framing of complexity classes in terms of decision problems, what this
 means is that a solvable instance of an \\(NP\\) decision problem has a proof
 of solvability which can be verified "easily". Taking 3-SAT, for example, a
 proof of solvability would be an assignment of truth values to each of the
-Boolean variables. Given a satisfying assignment, one can verify that all the
-clauses are satisfied in polynomial (indeed, linear) time, by simply iterating
-through all the clauses and computing their truth values under the putatively
-satisfying assignment. Other \\(NP\\) problems, such as subset sum, can be
-efficiently verified similarly.
+Boolean variables. Given a particular assignment, one can verify whether or not
+it is a satisfying assignment by simply checking whether all the clauses are
+satisfied. This can be done in polynomial (indeed, linear) time, by simply
+iterating through all the clauses and computing their truth values under the
+supposedly satisfying assignment. Other \\(NP\\) problems, such as subset sum,
+can be efficiently verified similarly.
 </p>
