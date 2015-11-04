@@ -57,15 +57,15 @@ $$ \Sigma = \left\{ 0, 1, ␣, \neg, \wedge \right\} $$
 An instance of Professor Aaronson's 3-SAT problem can be encoded as a string in
 this alphabet as follows:
 
-    1. Encode the name of each Boolean variable as a distinct binary number.
+ 1. Encode the name of each Boolean variable as a distinct binary number.
 
-    2. Encode each clause by mapping each variable in that clause
-       to its binary representation from step 1, prefixed with the \\(\neg\\) symbol if that
-       variable is negated in the clause. The distinct variable representations within
-       a clause are separated by using the space symbol.
+ 2. Encode each clause by mapping each variable in that clause
+    to its binary representation from step 1, prefixed with the \\(\neg\\) symbol if that
+    variable is negated in the clause. The distinct variable representations within
+    a clause are separated by using the space symbol.
 
-    3. Concatenate all the encoded clauses together, separating them with the
-       \\(\wedge\\) symbol.
+ 3. Concatenate all the encoded clauses together, separating them with the
+    \\(\wedge\\) symbol.
 
 It should be intuitively clear how to go from such an encoding back to an
 instance of the original 3-SAT problem as defined by Aaronson: simply split up
@@ -75,8 +75,10 @@ clauses; then map each distinct binary number to a distinct Boolean variable
 
 We define the language \\(3SAT\\) to be the set of all strings \\(x\\) of
 symbols from \\(\Sigma\\) such that:
-    1. \\(x\\) is a valid encoding (as defined above), and
-    2. The instance of Aaronson's 3-SAT problem encoded by \\(x\\) is
+
+  1. \\(x\\) is a valid encoding (as defined above), and
+
+  2. The instance of Aaronson's 3-SAT problem encoded by \\(x\\) is
        satisfiable.
 
 Now the decision problem of determining whether a particular sequence of
@@ -138,9 +140,7 @@ nondeterministic Turing machine which decides \\(L\\) runs in nondeterministic
 polynomial time.  Hence, by definition, the language \\(L\\) is in \\(NP\\).
 </div>
 
-
-
-
+<p markdown="1">
 So we have shown that the \\(NP\\) languages are precisely those languages
 \\(L\\) whose elements have a "proof" that they are in \\(L\\), which proof is
 verifiable in polynomial time by a deterministic Turing machine. Returning to
@@ -153,3 +153,4 @@ clauses are satisfied in polynomial (indeed, linear) time, by simply iterating
 through all the clauses and computing their truth values under the putatively
 satisfying assignment. Other \\(NP\\) problems, such as subset sum, can be
 efficiently verified similarly.
+</p>
