@@ -60,9 +60,9 @@ quantity. For simplicity, set the bias of each of the coins to \\(0.5\\).
 Now generate the uniform random number as follows:
 
   1. Flip all of the coins and interpret the result as a binary number:
-     the \\(i^\text{th}\\) coin (where \\(i \in \left\{ 1, \ldots, k \right\}\\))
-     maps to the \\(i^\text{th}\\) digit of the number, where \\(H\\) is represented
-     as 1 and \\(T\\) as 0.
+     the \\(i^\text{th}\\) coin (\\(i = 1, \ldots, k \\))
+     maps to the \\(i^\text{th}\\) digit of the number, where \\(H\\) corresponds
+     to 1 and \\(T\\) to 0.
   2. If the resulting binary number is outside the desired range (i.e., if it is
      greater than or equal to \\(n\\)), go back to step 1. Otherwise, output the
      binary number as the result of the die roll.
@@ -74,7 +74,7 @@ values that we want to generate; if we hit one of those numbers, we will simply
 try again. That is, we take a uniform distribution over the numbers \\((0,
 2^k]\\) and (possibly) "clip" it by setting to 0 the probabilities of all
 numbers greater than \\(n-1\\).  The distribution over the remaining numbers
-(i.e., the numbers in \\([0, n)\\) will still be uniform. Hence, conditional on
+(i.e., the numbers in \\([0, n)\\)) will still be uniform. Hence, conditional on
 having stopped the procedure, we will know that the output is within the
 appropriate range, and that it will have been selected from among all numbers
 in that range with uniform probability.
