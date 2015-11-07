@@ -23,18 +23,28 @@ and some unknown parameter vector \\(\beta\\). This is the standard linear regre
 model, and we will later show how the "standard" ANOVA with \\(k\\) groups is a
 special case of this. Under this model, the fitted parameter vector \\(\hat{\beta}\\)
 which minimizes the squared norm of the vector \\(\epsilon\\)
-is $$\hat{\beta} = (X^T X)^{-1} X^T y$$
+is
+
+\\[ \hat{\beta} = (X^T X)^{-1} X^T y \\]
 
 This matrix equation is sometimes known as the *normal equations*.
 
 Having found the least--squares parameter vector \\(\beta\\), we can compute
-the vector of residuals: $$\hat{\epsilon} = y - X \hat{\beta} = y - X (X^T
-X)^{-1} X^T y$$.  Assuming that one of the predictors (i.e., one of the columns
-of \\(X\\)) was a constant, we know that the mean of \\(\hat{\epsilon}\\) is 0,
-and hence the variance of the residuals is precisely \\(\hat{\epsilon}^T
-\hat{\epsilon}\\). This is, intuitively, the variance that was unexplained by
-the regression of \\(y\\) on \\(X\\). The question we now want to answer is,
-did that regression explain a "significant" amount of the variance in \\(y\\)?
-That is, is the remaining variance which is unexplained by the regression
-(namely \\(\hat{\epsilon}^T \hat{\epsilon}\\)) small in comparison to the
-variance of the observations \\(y\\)?
+the vector of residuals:
+
+\\[ \hat{\epsilon} = y - X \hat{\beta} = y - X (X^T X)^{-1} X^T y \\]
+
+Assuming that one of the predictors (i.e., one of the columns of \\(X\\)) was a
+constant, we know that the mean of \\(\hat{\epsilon}\\) is 0, and hence the
+variance of the residuals is precisely \\(\hat{\epsilon}^T \hat{\epsilon}\\).
+This is, intuitively, the variance that was unexplained by the regression of
+\\(y\\) on \\(X\\). The question we now want to answer is, did that regression
+explain a "significant" amount of the variance in \\(y\\)?  That is, is the
+remaining variance which is unexplained by the regression (namely
+\\(\hat{\epsilon}^T \hat{\epsilon}\\)) small in comparison to the variance of
+the observations \\(y\\)?
+
+To answer this question, we need to make some assumptions about the distribution
+of the error terms, i.e., the vector \\(\epsilon\\) in \\(y = X \beta + \epsilon\\).
+Suppose the errors are independent and identically distributed Gaussians of zero
+mean and variance \\(\sigma^2\\).
