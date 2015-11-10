@@ -94,14 +94,14 @@ that of the ratio
 
 \\[ \frac{\frac{1}{d_1} X_1}{\frac{1}{d_2} X_2}, \\]
 
-where \\(X_1\\) and \\(X_2\\) are distributed as \\(\chi^2_{d_1}\\) and
-\\(\chi^2_{d_2}\\) respectively.  But these are precisely the distributions of
-the two statistics from above! Moreover, when we take their ratio, the unknown
-scale factor of \\(1 / \sigma^2\\) cancels out from both the numerator and the
-denominator, so we are left with the following fact: under the assumptions of
-the null hypothesis,
+where \\(X_1\\) and \\(X_2\\) are distributed as \\(\chi^2\\) with \\(d_1\\)
+and \\(d_2\\) degrees of freedom respectively.  But these are precisely the
+distributions of the two statistics from above! Moreover, when we take their
+ratio, the unknown scale factor of \\(1 / \sigma^2\\) cancels out from both the
+numerator and the denominator, so we are left with the following fact: under
+the assumptions of the null hypothesis,
 
-$$ \frac{\left\( \sum\limits_{i=1}^n (y_i - \bar{y})^2 - \hat{\epsilon}^T \hat{\epsilon} \right\)}{\hat{\epsilon}^T \hat{\epsilon}} \sim F_{p, n - p - 1}. $$
+$$ \frac{\left( \sum\limits_{i=1}^n (y_i - \bar{y})^2 - \hat{\epsilon}^T \hat{\epsilon} \right)}{\hat{\epsilon}^T \hat{\epsilon}} \sim F_{p, n - p - 1}. $$
 
 All that remains to do is compute the value of the test statistic using the
 variance of our dataset and the sum of squared residuals from our regression
