@@ -57,7 +57,7 @@ at the \\(\alpha\\) significance level.
 
 So, what are the assumptions of the null hypothesis in this case? Again, we want
 to formalize the hypothesis that the regression is useless. So, we assume that
-each \\(y_i = \mu + \epsilon_i), for some mean \\(\mu\\) and Gaussian noise
+each \\(y_i = \mu + \epsilon_i\\), for some mean \\(\mu\\) and Gaussian noise
 \\(\epsilon_i \sim N(0, \sigma^2)\\). Under these assumptions, the variance
 of the residuals from the regression will satisfy
 
