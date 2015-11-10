@@ -77,7 +77,7 @@ to that of the squared residuals (after they are scaled down by a factor of
 Similarly, we can show that the difference between the residual sum of squares
 and the variance in the initial dataset, i.e.,
 
-$$ \left\( \frac{1}{\sigma^2} \left\[ \sum\limits_{i=1}^n (y_i - \bar{y})^2 - \hat{\epsilon}^T \hat{\epsilon} \right\] \right\) \sim \chi^2_{p} $$
+$$ \left( \frac{1}{\sigma^2} \left[ \sum\limits_{i=1}^n (y_i - \bar{y})^2 - \hat{\epsilon}^T \hat{\epsilon} \right] \right) \sim \chi^2_{p} $$
 
 This brings us to the definition of the \\(F\\) distribution (named, like most
 objects in statistics, after the British statistician R. A. Fisher).  Unlike
