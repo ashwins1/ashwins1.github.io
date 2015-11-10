@@ -77,7 +77,7 @@ to that of the squared residuals (after they are scaled down by a factor of
 Similarly, we can show that the difference between the residual sum of squares
 and the variance in the initial dataset, i.e.,
 
-\\[ \left( \frac{1}{\sigma^2} \left[ \sum\limits_{i=1}^n (y_i - \bar{y})^2 - \hat{\epsilon}^T \hat{\epsilon} \right] \right) \sim \chi^2_{p} \\]
+\\[ \left\( \frac{1}{\sigma^2} \left\[ \sum\limits_{i=1}^n (y_i - \bar{y})^2 - \hat{\epsilon}^T \hat{\epsilon} \right\] \right\) \sim \chi^2_{p} \\]
 
 This brings us to the definition of the \\(F\\) distribution (named, like most
 objects in statistics, after the British statistician R. A. Fisher).  Unlike
@@ -101,7 +101,7 @@ scale factor of \\(1 / \sigma^2\\) cancels out from both the numerator and the
 denominator, so we are left with the following fact: under the assumptions of
 the null hypothesis,
 
-\\[ \frac{\left( \sum\limits_{i=1}^n (y_i - \bar{y})^2 - \hat{\epsilon}^T \hat{\epsilon} \right)}{\hat{\epsilon}^T \hat{\epsilon}} \sim F_{p, n - p - 1}. \\]
+\\[ \frac{\left\( \sum\limits_{i=1}^n (y_i - \bar{y})^2 - \hat{\epsilon}^T \hat{\epsilon} \right\)}{\hat{\epsilon}^T \hat{\epsilon}} \sim F_{p, n - p - 1}. \\]
 
 All that remains to do is compute the value of the test statistic using the
 variance of our dataset and the sum of squared residuals from our regression
