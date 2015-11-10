@@ -86,13 +86,13 @@ one but two degrees of freedom.  \\(F\\) distribution with \\( (d_1, d_2) \\)
 degrees of freedom, denoted \\(F_{d_1, d_2}\\), can be characterized as the
 distribution of the ratio
 
-$$ \frac{\sum\limits_{i=1}^{d_1} U_i^2} {\sum\limits_{j=1}^{d_2} V_j^2}, $$
+$$ \frac{\frac{1}{d_1} \sum\limits_{i=1}^{d_1} U_i^2} {\frac{1}{d_2} \sum\limits_{j=1}^{d_2} V_j^2}, $$
 
 where the \\(U_i, i = 1, \ldots, d_1, V_j, j = 1, \ldots, d_2\\) are i.i.d.
 standard normal variables. Equivalently, we can express the distribution as
 that of the ratio
 
-\\[ \frac{X_1}{X_2}, \\]
+\\[ \frac{\frac{1}{d_1} X_1}{\frac{1}{d_2} X_2}, \\]
 
 where \\(X_1\\) and \\(X_2\\) are distributed as \\(\chi^2_{d_1}\\) and
 \\(\chi^2_{d_2}\\) respectively.  But these are precisely the distributions of
